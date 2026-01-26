@@ -1,0 +1,33 @@
+gametitle=Gran Turismo 4 Online Public Beta [SCUS-97436] (U)
+
+[Endurance and Extreme Events Access From The Start (US Hall Swap)]
+comment=Hold [Triangle+L2] then press [Up] for Endurance, or [Down] for Extreme events inside the US Hall. Do it again every time you return to the GT Mode map. Leave the GT Mode to have US Hall return to the original.
+author=ike9000
+//
+// [681344]==0xEEEF --> if held L2+Up+Triangle
+// [681344]==0xEEBF --> if held L2+Down+Triangle
+//
+patch=1,EE,E00AEEEF,extended,00681344           //if held L2+Up+Triangle
+	patch=1,EE,E0046D41,extended,00DD5EBC       //if "Am" -> "mA" -> [41,6D] -> 0x6D41 -> "AmericanRaceEvents"
+		patch=1,EE,20DD5EBC,extended,75646E45   //"Endu"  -> "udnE" ("EnduranceEvents")
+		patch=1,EE,20DD5EC0,extended,636E6172   //"ranc"  -> "cnar"
+		patch=1,EE,20DD5EC4,extended,65764565   //"eEve"  -> "evEe"
+		patch=1,EE,20DD5EC8,extended,0073746E   //"nts\0" -> "\0stn"
+	patch=1,EE,E0046D41,extended,00DD5DFC       //if "Am" (same as above but at different addr.)
+		patch=1,EE,20DD5DFC,extended,75646E45   //"Endu"  -> "udnE"
+		patch=1,EE,20DD5E00,extended,636E6172   //"ranc"  -> "cnar"
+		patch=1,EE,20DD5E04,extended,65764565   //"eEve"  -> "evEe"
+		patch=1,EE,20DD5E08,extended,0073746E   //"nts\0" -> "\0stn"
+patch=1,EE,E00CEEBF,extended,00681344           //if held L2+Down+Triangle
+	patch=1,EE,E0056D41,extended,00DD5EBC       //if "Am"
+		patch=1,EE,20DD5EBC,extended,72747845   //"Extr"    -> "rtxE" ("ExtremeHallEvents")
+		patch=1,EE,20DD5EC0,extended,48656D65   //"emeH"    -> "Heme"
+		patch=1,EE,20DD5EC4,extended,456C6C61   //"allE"    -> "Ella"
+		patch=1,EE,20DD5EC8,extended,746E6576   //"vent"    -> "tnev"
+		patch=1,EE,20DD5ECC,extended,00000073   //"s\0\0\0" -> "\0\0\0s"
+	patch=1,EE,E0056D41,extended,00DD5DFC       //if "Am" (same as above but at different addr.)
+		patch=1,EE,20DD5DFC,extended,72747845   //"Extr"    -> "rtxE"
+		patch=1,EE,20DD5E00,extended,48656D65   //"emeH"    -> "Heme"
+		patch=1,EE,20DD5E04,extended,456C6C61   //"allE"    -> "Ella"
+		patch=1,EE,20DD5E08,extended,746E6576   //"vent"    -> "tnev"
+		patch=1,EE,20DD5E0C,extended,00000073   //"s\0\0\0" -> "\0\0\0s"

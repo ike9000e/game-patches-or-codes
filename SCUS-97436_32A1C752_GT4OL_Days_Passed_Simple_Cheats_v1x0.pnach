@@ -1,0 +1,23 @@
+gametitle=Gran Turismo 4 Online Public Beta [SCUS-97436] (U)
+//
+//
+// Days passed
+//	addr-1: 009BC5A4(h)(u32)
+//	example values:
+//		E9 6F 25 00 = 20(d) days
+//		EA 6F 25 00 = 21(d) days -> rv: 00256FEA
+//		E9 6F 26 00 = 65556(d) days -> rv: 00266FE9
+//		C9 71 25 00 = 500(d) days -> rv: 002571C9
+//		59 70 25 00 = 132(d) days
+//
+[Days Passed - Set To 500]
+comment=
+patch=3,EE,209BC5A4,extended,002571C9
+
+[Days Passed - Set To 65556]
+comment=
+patch=3,EE,209BC5A4,extended,00266FE9
+
+[Days Passed - Set To 1]
+comment=
+patch=3,EE,209BC5A4,extended,00256FD6
