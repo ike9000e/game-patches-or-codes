@@ -3,7 +3,8 @@ Collection of created cheat codes or memory addresses for video games. Currently
 Converted, ported or created patches.
 
 ## Covered games:
-* Gran Turismo 4 Online Public Beta, SCUS-97436 (U)
+* Gran Turismo 4 Online Public Beta, SCUS-97436 (U). 
+  Short name used: GT4OL.
 
 ## How To Use
 
