@@ -1,0 +1,58 @@
+gametitle=Gran Turismo 4 Online Public Beta [SCUS-97436] (U)
+
+[Give All Licenses]
+comment=Unlocks all licenses but not prizes. Doesn't give cars. Doesn't give trophy icons. License tests remain not completed so you can complete them, set records later.
+author=ike9000
+patch=3,EE,409A7674,extended,00500001
+patch=3,EE,0000FCC1,extended,00000000
+
+
+[Give B License Only]
+comment=
+author=ike9000
+patch=3,EE,409A7674,extended,00100001   // 32-bit serial write, line 1/2
+patch=3,EE,0000FCC1,extended,00000000   // 32-bit serial write, line 2/2
+
+[Give A License Only]
+comment=
+author=ike9000
+patch=3,EE,409A76B4,extended,00100001
+patch=3,EE,0000FCC1,extended,00000000
+
+[Give IB License Only]
+comment=
+author=ike9000
+patch=3,EE,409A76F4,extended,00100001
+patch=3,EE,0000FCC1,extended,00000000
+
+[Give IA License Only]
+comment=
+author=ike9000
+patch=3,EE,409A7734,extended,00100001
+patch=3,EE,0000FCC1,extended,00000000
+
+[Give S License Only]
+comment=
+author=ike9000
+patch=3,EE,409A7774,extended,00100001
+patch=3,EE,0000FCC1,extended,00000000
+
+//[Take Away B License Only]
+//author=ike9000
+//patch=3,EE,409A7674,extended,00100001
+//patch=3,EE,0000FFF0,extended,00000000
+
+[Take Away All Licenses]
+comment=
+author=ike9000
+patch=3,EE,409A7674,extended,00500001
+patch=3,EE,0000FFF0,extended,00000000
+
+//
+// 32-bit serial write
+//
+//     Starting with address E98100, this code writes the 32-bit value 0x12345678 to 0x12 addresses.
+//     In each cycle the address is incremented by 0x1 * 4 and the value is incremented by 0x1.
+//     patch=1,EE,40E98100,extended,00120001
+//     patch=1,EE,12345670,extended,00000001
+//
