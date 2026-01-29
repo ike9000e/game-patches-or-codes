@@ -1,0 +1,61 @@
+gametitle=Gran Turismo 4 Spec II [SCUS-97436] (U)
+
+[Spec II: Give All Licenses (No Prizes)]
+comment=Unlocks all licenses but not prizes. Doesn't give cars. Doesn't give trophy icons. License tests remain not completed so you can complete them, set records later. (Spec II v1.10)
+author=ike9000
+patch=3,EE,409C8FF4,extended,00500001
+patch=3,EE,0000FCC1,extended,00000000
+
+[Spec II: Give All Licenses And Prizes]
+comment=Unlocks all licenses, car prizes and gold trophies. Warning: It will only show the prizes after re-entering the GT mode again, or after restarting the game. Warning: Can't be undone. If you only wan't prizes for certain license, eg. IA, then after checking this checkbox, immediatelly check checkboxes for licenses: A, B, IB and S. Make sure it did for you what you want, otherwise restart the game to reload the gamesave. (Spec II v1.10)
+author=ike9000
+patch=3,EE,409C8FF4,extended,00500001
+patch=3,EE,0000F991,extended,00000000
+
+
+
+[Spec II: Give B License Only (No Prizes)]
+comment=
+author=ike9000
+patch=3,EE,409C8FF4,extended,00100001   // 32-bit serial write, line 1/2
+patch=3,EE,0000FCC1,extended,00000000   // 32-bit serial write, line 2/2
+
+[Spec II: Give A License Only (No Prizes)]
+comment=
+author=ike9000
+patch=3,EE,409C9034,extended,00100001
+patch=3,EE,0000FCC1,extended,00000000
+
+[Spec II: Give IB License Only (No Prizes)]
+comment=
+author=ike9000
+patch=3,EE,409C9074,extended,00100001
+patch=3,EE,0000FCC1,extended,00000000
+
+[Spec II: Give IA License Only (No Prizes)]
+comment=
+author=ike9000
+patch=3,EE,409C90B4,extended,00100001
+patch=3,EE,0000FCC1,extended,00000000
+
+[Spec II: Give S License Only (No Prizes)]
+comment=
+author=ike9000
+patch=3,EE,409C90F4,extended,00100001
+patch=3,EE,0000FCC1,extended,00000000
+
+
+[Spec II: Take Away All Licenses]
+comment=Note: Won't take away car prizes. (Spec II v1.10)
+author=ike9000
+patch=3,EE,409C8FF4,extended,00500001
+patch=3,EE,0000FFF0,extended,00000000
+
+//
+// 32-bit serial write
+//
+//     Starting with address E98100, this code writes the 32-bit value 0x12345678 to 0x12 addresses.
+//     In each cycle the address is incremented by 0x1 * 4 and the value is incremented by 0x1.
+//     patch=1,EE,40E98100,extended,00120001
+//     patch=1,EE,12345670,extended,00000001
+//

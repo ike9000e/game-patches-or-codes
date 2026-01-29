@@ -1,0 +1,57 @@
+gametitle=Gran Turismo 4 Spec II [SCUS-97436] (U)
+
+[Spec II: Access To Endurance and Extreme Events From The Start (US Hall Swap)]
+comment=Hold [Triangle+L2] then press [Up] for Endurance, or [Down] for Extreme events inside the US Hall. Do it again every time you return to the GT Mode map. Leave the GT Mode to have US Hall return to the original. (Spec II v1.10)
+author=ike9000
+//
+// The cheat operates by replacing the text string that references the 
+// database of particular race events with another event.
+// For US events hall, string name is "AmericanRaceEvents", for Extreme events hall 
+// it's "ExtremeHallEvents", and for Endurance events hall it's "EnduranceEvents".
+// After testing with various game saves, with multiple restarts,
+// it appears that the string "AmericanRaceEvents" can appear in 
+// the game memory only at one of 2 static addresses.
+// The logic of the cheat below simply checks both addresses, if 
+// the string is there, then replaces it with either 
+// "ExtremeHallEvents" or "EnduranceEvents", 
+// depending on the button combination detected.
+//
+// Once replaced, for example, with the Endurance events, to replace with
+// the Extreme evemts, in turn, needed is to restore the US Hall to 
+// the original first.
+//
+// US Hall automatically restores to the original whenever leaved 
+// the GT Mode. Simplest way to do this is by entering the car settings
+// from the the garage screen, pressing the Start button.
+// But other ways include exiting to the title screen, starting a race
+// or visiting the game options.
+//
+patch=1,EE,E00AEEEF,extended,00681344           //if held L2+Up+Triangle
+	patch=1,EE,E0046D41,extended,00FAAA44       //if "Am" -> "mA" -> [41,6D] -> 0x6D41 -> "AmericanRaceEvents"
+		patch=1,EE,20FAAA44,extended,75646E45   //"Endu"  -> "udnE" ("EnduranceEvents")
+		patch=1,EE,20FAAA48,extended,636E6172   //"ranc"  -> "cnar"
+		patch=1,EE,20FAAA4C,extended,65764565   //"eEve"  -> "evEe"
+		patch=1,EE,20FAAA50,extended,0073746E   //"nts\0" -> "\0stn"
+	patch=1,EE,E0046D41,extended,00FAAB94       //if "Am" (same as above but at different addr.)
+		patch=1,EE,20FAAB94,extended,75646E45   //"Endu"  -> "udnE"
+		patch=1,EE,20FAAB98,extended,636E6172   //"ranc"  -> "cnar"
+		patch=1,EE,20FAAB9C,extended,65764565   //"eEve"  -> "evEe"
+		patch=1,EE,20FAABA0,extended,0073746E   //"nts\0" -> "\0stn"
+patch=1,EE,E00CEEBF,extended,00681344           //if held L2+Down+Triangle
+	patch=1,EE,E0056D41,extended,00FAAA44       //if "Am"
+		patch=1,EE,20FAAA44,extended,72747845   //"Extr"    -> "rtxE" ("ExtremeHallEvents")
+		patch=1,EE,20FAAA48,extended,48656D65   //"emeH"    -> "Heme"
+		patch=1,EE,20FAAA4C,extended,456C6C61   //"allE"    -> "Ella"
+		patch=1,EE,20FAAA50,extended,746E6576   //"vent"    -> "tnev"
+		patch=1,EE,20FAAA54,extended,00000073   //"s\0\0\0" -> "\0\0\0s"
+	patch=1,EE,E0056D41,extended,00FAAB94       //if "Am" (same as above but at different addr.)
+		patch=1,EE,20FAAB94,extended,72747845   //"Extr"    -> "rtxE"
+		patch=1,EE,20FAAB98,extended,48656D65   //"emeH"    -> "Heme"
+		patch=1,EE,20FAAB9C,extended,456C6C61   //"allE"    -> "Ella"
+		patch=1,EE,20FAABA0,extended,746E6576   //"vent"    -> "tnev"
+		patch=1,EE,20FAABA4,extended,00000073   //"s\0\0\0" -> "\0\0\0s"
+
+//
+// [681344]==0xEEEF --> if held L2+Up+Triangle
+// [681344]==0xEEBF --> if held L2+Down+Triangle
+//
