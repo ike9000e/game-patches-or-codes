@@ -1,5 +1,5 @@
 # Game Patches Or Codes
-Collection of created cheat codes or memory addresses for video games. Currently included are Pnach paches for GT4 game on PCSX2. Converted, ported or created patches. Author: ike9000.
+Collection of created cheat codes or memory addresses for video games. Currently included are Pnach paches for GT4 game on PCSX2. Converted, ported or created patches. Done by ike9000.
 
 ## Covered games:
 * Gran Turismo 4 Online Public Beta (GT4OL) (SCUS-97436). [Directory](GT4OL_SCUS97436).
@@ -17,5 +17,4 @@ To reload the contents of the pnach file when the game is running select Tools->
 
 ## More Information On PCSX2 Cheats
 
-Writing pnach files
-https://slymods.info/wiki/Guide:Writing_pnach_files
+[Writing pnach files](https://slymods.info/wiki/Guide:Writing_pnach_files)
