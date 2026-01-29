@@ -15,6 +15,6 @@ Do note that each game has its own "enable cheats" option. Right click on a game
 
 To reload the contents of the pnach file when the game is running select Tools->Reload Cheats/Patches from the toolbar. 
 
-## More Information On PCSX2 Cheats
+## More Information
 
-[Writing pnach files](https://slymods.info/wiki/Guide:Writing_pnach_files)
+[Writing PCSX2 Cheats, Pnach Files](https://slymods.info/wiki/Guide:Writing_pnach_files)
