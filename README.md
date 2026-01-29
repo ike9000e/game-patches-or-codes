@@ -2,8 +2,8 @@
 Collection of created cheat codes or memory addresses for video games. Currently included are Pnach paches for GT4 game on PCSX2. Converted, ported or created patches. Author: ike9000.
 
 ## Covered games:
-* Gran Turismo 4 Online Public Beta, SCUS-97436 (U). 
-  Short name used: GT4OL.
+* Gran Turismo 4 Online Public Beta (GT4OL) (SCUS-97436). [Directory](GT4OL_SCUS97436).
+* Gran Turismo 4 Spec II Mod (SCUS-97436). [Directory](GT4_Spec2_SCUS97436).
 
 ## How To Use
 
