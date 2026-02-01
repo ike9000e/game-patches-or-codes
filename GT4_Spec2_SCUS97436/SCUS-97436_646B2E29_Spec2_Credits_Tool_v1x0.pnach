@@ -1,0 +1,150 @@
+gametitle=Gran Turismo 4 Spec II [SCUS-97436] (U)
+//
+// Spec II Credits value addr: 9C86A8(h,EE,64-bit)
+//
+
+
+[Spec II: Credits - Set to 10000]
+comment=
+author=ike9000
+// 
+//
+// 32-bit write
+// 2aaaaaaa vvvvvvvv
+//
+// 7A726F70,6C6C910E(h,u64) -> 50000(d)
+// 7A726F70,6C6C754E(h,u64) -> 10000(d)
+//
+patch=3,EE,209C86A8,extended,6C6C754E
+patch=3,EE,209C86AC,extended,7A726F70
+
+[Spec II: Credits - Set to 0]
+comment=0 credits will show as "--" in the game.
+author=ike9000
+patch=3,EE,209C86A8,extended,6C6C525E
+patch=3,EE,209C86AC,extended,7A726F70
+
+[Spec II: Credits - Set to 50000]
+comment=
+author=ike9000
+patch=3,EE,209C86A8,extended,6C6C910E
+patch=3,EE,209C86AC,extended,7A726F70
+
+[Spec II: Credits - Set to 500000]
+comment=
+author=ike9000
+patch=3,EE,209C86A8,extended,6C6BF37E   // 500000(d) = 7A120(h) XOR 6C6C525E(h) = 6C6BF37E(h)
+patch=3,EE,209C86AC,extended,7A726F70
+
+[Spec II: Credits - Set to 10,000,000,000]
+comment=
+author=ike9000
+patch=3,EE,209C86A8,extended,3867B65E
+patch=3,EE,209C86AC,extended,7A726F72
+
+//
+// Credits hash value via XOR is 7A72,6F70,6C6C,525E(h)
+// or 7A726F70,6C6C525E(h)
+//
+// 16-bit XOR
+// 7aaaaaaa 0050vvvv
+// Example 1: If address E98100 contains the value 0xC2, then 0xC2 ^ 0x567 = 11000010 ^ 010101100111 = 010110100101 = 0x5A5 will be written.
+// patch=1,EE,70E98100,extended,00500567
+// 
+// 32-bit increment
+// Increment the 32-bit value at address @a by value @v.
+// 30400000 0aaaaaaa
+// vvvvvvvv 00000000
+// Example: Increment the 32-bit value at address E98100 by value 0x12345678.
+// patch=1,EE,30400000,extended,00E98100
+// patch=1,EE,12345678,extended,00000000
+//
+
+[Spec II: Credits - Add 1000]
+comment=Note: This and other cheats that do addition or other arithmetics may not work if current credits are above 4,294,967,295.
+author=ike9000
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+patch=3,EE,30400000,extended,009C86A8    // 32-bit increment line 1/2
+patch=3,EE,000003E8,extended,00000000    // 32-bit increment line 2/2. 3E8(h)=1000(d)
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+
+[Spec II: Credits - Add 10000]
+comment=Note: This and other cheats that do addition or other arithmetics may not work if current credits are above 4,294,967,295.
+author=ike9000
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+patch=3,EE,30400000,extended,009C86A8    // 32-bit increment line 1/2
+patch=3,EE,00002710,extended,00000000    // 32-bit increment line 2/2. 2710(h)=10000(d)
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+
+
+[Spec II: Credits - Add 100000]
+comment=
+author=ike9000
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+patch=3,EE,30400000,extended,009C86A8    // 32-bit increment line 1/2
+patch=3,EE,000186A0,extended,00000000    // 32-bit increment line 2/2, 186A0(h)=100000(d)
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+
+
+[Spec II: Credits - Subtract 1000]
+comment=Removes 1000 credits from the current in-game.
+author=ike9000
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+patch=3,EE,30500000,extended,009C86A8    // 32-bit decrement line 1/2
+patch=3,EE,000003E8,extended,00000000    // 32-bit decrement line 2/2. 3E8(h)=1000(d)
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+
+
+[Spec II: Credits - Subtract 10000]
+comment=
+author=ike9000
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+patch=3,EE,30500000,extended,009C86A8    // 32-bit decrement line 1/2
+patch=3,EE,00002710,extended,00000000    // 32-bit decrement line 2/2
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+
+
+[Spec II: Credits - Subtract 100000]
+comment=
+author=ike9000
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+patch=3,EE,30500000,extended,009C86A8    // 32-bit decrement line 1/2
+patch=3,EE,000186A0,extended,00000000    // 32-bit decrement line 2/2, 186A0(h)=100000(d)
+patch=3,EE,709C86A8,extended,0050525E    // 16-bit XOR, 1/4, 7aaaaaaa 0050vvvv
+patch=3,EE,709C86AA,extended,00506C6C    // 16-bit XOR, 2/4
+patch=3,EE,709C86AC,extended,00506F70    // 16-bit XOR, 3/4
+patch=3,EE,709C86AE,extended,00507A72    // 16-bit XOR, 4/4
+
