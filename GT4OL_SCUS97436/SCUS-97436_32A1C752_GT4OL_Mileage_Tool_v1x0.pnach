@@ -1,0 +1,115 @@
+gametitle=Gran Turismo 4 Online Public Beta [SCUS-97436] (U)
+
+// 32-bit write
+// 2aaaaaaa vvvvvvvv
+
+
+
+[Current Car Mileage - Set to 0 km]
+comment=
+author=ike9000
+patch=3,EE,209A6CE8,extended,00000000
+
+[Current Car Mileage - Set to 100 km]
+comment=
+author=ike9000
+patch=3,EE,209A6CE8,extended,000186A0
+
+[Current Car Mileage - Set to 500 km]
+comment=
+author=ike9000
+patch=3,EE,209A6CE8,extended,0007A120
+
+[Current Car Mileage - Set to 1,000 km]
+comment=
+author=ike9000
+patch=3,EE,209A6CE8,extended,000F4240
+
+[Current Car Mileage - Set to 10,000 km]
+comment=
+author=ike9000
+patch=3,EE,209A6CE8,extended,00989680
+
+[Current Car Mileage - Set to 50,000 km]
+comment=
+author=ike9000
+patch=3,EE,209A6CE8,extended,02FAF080
+
+[Current Car Mileage - Set to 100,000 km]
+comment=
+author=ike9000
+patch=3,EE,209A6CE8,extended,05F5E100
+
+[Current Car Mileage - Set to 500,000 km]
+comment=
+author=ike9000
+patch=3,EE,209A6CE8,extended,1DCD6500
+
+[Current Car Mileage - Set to 2,000,000 km]
+comment=
+author=ike9000
+patch=3,EE,209A6CE8,extended,77359400
+
+// Increment the 32-bit value at address @a by value @v.
+// 30400000 0aaaaaaa
+// vvvvvvvv 00000000
+
+[Current Car Mileage - Add 0.1 km]
+comment=
+author=ike9000
+patch=3,EE,30400000,extended,009A6CE8
+patch=3,EE,00000064,extended,00000000
+
+
+[Current Car Mileage - Add 1 km]
+comment=
+author=ike9000
+patch=3,EE,30400000,extended,009A6CE8
+patch=3,EE,000003E8,extended,00000000
+
+[Current Car Mileage - Add 10 km]
+comment=
+author=ike9000
+patch=3,EE,30400000,extended,009A6CE8
+patch=3,EE,00002710,extended,00000000
+
+
+[Current Car Mileage - Add 1,000 km]
+comment=
+author=ike9000
+patch=3,EE,30400000,extended,009A6CE8
+patch=3,EE,000F4240,extended,00000000
+
+[Current Car Mileage - Add 10,000 km]
+comment=
+author=ike9000
+patch=3,EE,30400000,extended,009A6CE8
+patch=3,EE,00989680,extended,00000000
+
+
+
+[Current Car Mileage - Subtract 10 km]
+comment=
+author=ike9000
+patch=3,EE,30500000,extended,009A6CE8
+patch=3,EE,00002710,extended,00000000
+
+
+[Current Car Mileage - Subtract 100 km]
+comment=
+author=ike9000
+patch=3,EE,30500000,extended,009A6CE8
+patch=3,EE,000186A0,extended,00000000
+
+[Current Car Mileage - Subtract 5,000 km]
+comment=
+author=ike9000
+patch=3,EE,30500000,extended,009A6CE8
+patch=3,EE,004C4B40,extended,00000000
+
+
+[Current Car Mileage - Subtract 10,000 km]
+comment=
+author=ike9000
+patch=3,EE,30500000,extended,009A6CE8
+patch=3,EE,00989680,extended,00000000
